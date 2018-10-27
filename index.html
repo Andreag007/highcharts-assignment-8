@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+      <title>Developement in Colombia</title>
+
+      <link rel="stylesheet" href="styles/newcss.css">
+    </head>
+
+  <body>
+    <h1>Developement in Colombia</h1>
+
+    <div id="container"></div>
+
+    <div id="container2"></div>
+
+    <p>These charts show the development of Colombia. In chart one, we see the infant mortaity rate. We used a simple line graph to demonstrate the decline in infant mortality rate. The second chart demonstrates the birth rate. The chart starts at 2025 and we see that there is a very slight decrease in the birth rate. <a href="http://data.un.org/Data.aspx?q=Colombia+mortality&d=PopDiv&f=variableID%3a77%3bcrID%3a170" target="_blank">UN Datat</a>. The second source <a href="http://data.un.org/Data.aspx?q=Colombia+population&d=PopDiv&f=variableID%3a47%3bcrID%3a170" target="_blank">UN Data</a></p>
+
+    <script>
+    Highcharts.chart('container', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Infant mortality rate in Colombia, for both sexes combined (infant deaths per 1,000 live births) 1965-2020'
+    },
+    subtitle: {
+        text: 'Source: data.un.org'
+    },
+    xAxis: {
+        categories: ['1965-1970', '1970-1975', '1975-1980', '1980-1985', '1985-1990', '1990-1995', '1995-2000', '2000-2005', '2005-2010', '2010-2015', '2015-2020']
+    },
+    yAxis: {
+        title: {
+            text: 'Deaths'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series: [{
+        name: 'Colombia',
+        data: [82.2, 73, 56.7, 42.9, 35.3, 27.6, 23.9, 20.5, 19, 17.9, 15.5]
+    }, ]
+})
+</script>
+
+
+<script>
+
+Highcharts.chart('container2', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Average annual rate of population change in Colombia (percentage)'
+    },
+    xAxis: {
+        categories: ['2025-2030', '2030-2035', '2035-2040', '2040-2045', '2045-2050']
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Colombia',
+        data: [.488, .344, .206, .080, -.037]
+    },
+
+   ]
+});
+    </script>
+  </body>
+  </html>
